@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> automic UI Template </title>
+    <!-- Mobile specific metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=no">
+    
+    <!-- Force IE9 to render in normal mode -->
+    <!--[if IE]>
+    <meta http-equiv="x-ua-compatible" content="IE=9"/><![endif]-->
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="application-name" content="">
+    <!-- 进度条加载pace.js -->
+    <script src="./plugins/pace/pace.js"></script>
+    <link href="./plugins/pace/minimal.css" rel="stylesheet"/>
+    
+    
+    <!-- 系统css样式列表 -->
+    <link rel="stylesheet" href="./static/css/amui.css">
+    <!-- fonts 字体 -->
+    <link rel="stylesheet" href="./static/css/icons.css">
+    <!-- theme 主题 -->
+    <!-- custom 自定义 -->
+    <link rel="stylesheet" href="./static/css/custom.css">
+    <!-- favicon.icon -->
+    <link rel="icon" href="./static/images/icon/favicon.ico" mce_href="./static/images/icon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <!-- Windows8 touch icon ( http://www.buildmypinnedsite.com/ )-->
+    <meta name="msapplication-TileColor" content="#3399cc">
+    <style>
+        body{
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<!--[if lt IE 9]>
+<p class="browsehappy">您正在使用一个 <strong>过时</strong> 浏览器. 请 <a href="http://browsehappy.com/">升级您的浏览器</a> 去改进您的体验.</p>
+<![endif]-->
+
+    <a-app id="app" theme="dark"><!-- 这里提供了设置全局主题的地方 -->
+        
+        <!-- todo: layout-header -->
+        <layout-header  :logo="header.logo" :url="header.url" :title="header.title" :rightWindow="rightWindow" >
+        
+            <header-menu icon="fa fa-bell-o" title="系统设置" footertitle="更多选项" badge=10 :data="headerMenu01">
+                <li v-for="item in headerMenu01">
+                    <a href="#"><i :class="item.icon"></i> {{item.text}}</a>
+                </li>
+            </header-menu>
+        
+            <header-menu icon="fa fa-bell-o" title="系统设置" footertitle="更多选项" badge=10 :data="headerMenu01">
+            </header-menu>
+        
+            <header-menu icon="fa fa-bell-o" title="系统设置" >
+                <div style="padding:20px;">
+                    ddddddddddd
+                </div>
+            </header-menu>
+    
+        </layout-header>
+        <!-- / page-navbar -->
+    
+    
+        <!-- todo: ayout-sider 属性列表: width data -->
+        <layout-sider :data="menuData" :width="size.left" title="菜单">
+        </layout-sider>
+        <!-- / #wrapper -->
+        
+        
+        <!-- todo: page-content 这里需要设置如果使用ifarme 那么布局就是另外一种模样 -->
+        <layout-content :size="size" url="./pages/content.html">
+        
+        </layout-content>
+        <!-- / page-content -->
+        
+        <!-- todo: footer -->
+        <layout-footer :size="size">
+            
+            
+        </layout-footer>
+        <!-- / footer -->
+        
+        <!-- todo: back-to-top -->
+        <div id="back-to-top" class="rightsidebar" style="display: none;"><a href="#">Back to Top</a>
+        </div>
+        <!-- / back-to-top -->
+    
+    </a-app>
+<!-- Javascripts -->
+<!-- UI 组件库引用库 -->
+<script src="./plugins/modernizr.custom.js"></script>
+<script src="./plugins/jquery-3.3.1.min.js"></script>
+<script src="./plugins/bootstrap/bootstrap.js"></script>
+<script src="./plugins/vue.js"></script>
+<!-- UI组件库 测试版本 -->
+
+<script src="./plugins/amui/vendor.js"></script>
+<script src="./plugins/amui/amui.js"></script>
+
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data :{
+            size:{
+                left:210,
+                right:0
+            },
+            rightWindow:true,//显示右侧窗口按钮
+            header:{
+//                logo:'/static/img/logo.png',
+                url:'index.html',
+                title:'aotumic UI组件'
+            },
+            headerMenu01:[
+                {
+                    icon:'l-basic-life-buoy',
+                    text:' 2 support request'
+                },
+                {
+                    icon:'l-basic-gear',
+                    text:' 2 support request'
+                },
+                {
+                    icon:'l-weather-lightning',
+                    text:' 2 support request'
+                },
+                {
+                    icon:'l-basic-server2',
+                    text:' 2 support request'
+                },
+                {
+                    icon:'l-basic-lightbulb',
+                    text:' 2 support request'
+                }
+            ],
+            menuData:[
+                {
+                    name:'Dashboard',
+                    url:'index.html',
+                    icon_class:'l-basic-webpage'
+                },
+                {
+                    name:'Charts',
+                    icon_class:'l-ecommerce-graph1',
+                    children:[
+                        {
+                            name:'Flot charts',
+                            children:[
+                                {
+                                    name:'Basic forms',
+                                    url:'./pages/content.html'
+                                },
+                                {
+                                    name:'Advanced forms',
+                                    url:'./pages/content.html'
+                                },
+                                {
+                                    name:'Form layouts',
+                                    url:'./pages/content.html'
+                                }
+                            ]
+                        },
+                        {
+                            name:'Morris charts',
+                            url:''
+                        },
+                        {
+                            name:'Chartjs',
+                            children:[
+                                {
+                                    name:'Basic forms',
+                                    url:'./pages/content.html'
+                                },
+                                {
+                                    name:'Advanced forms',
+                                    url:'./pages/content.html'
+                                },
+                                {
+                                    name:'Form layouts',
+                                    url:'./pages/content.html'
+                                }
+                            ]
+                        },
+                        {
+                            name:'Other charts',
+                            url:'./pages/content.html'
+                        }
+                    ]
+                },
+                {
+                    name:'Forms',
+                    icon_class:'l-ecommerce-graph1',
+                    children:[
+                        {
+                            name:'Basic forms',
+                            url:'./pages/content.html'
+                        },
+                        {
+                            name:'Advanced forms',
+                            url:'./pages/content2.html'
+                        },
+                        {
+                            name:'Form layouts',
+                            url:'./pages/content.html'
+                        },
+                        {
+                            name:'Form wizard',
+                            url:'./pages/content2.html'
+                        },
+                        {
+                            name:'Form validation',
+                            url:'./pages/content.html'
+                        },
+                        {
+                            name:'Code editor',
+                            url:'./pages/content2.html'
+                        }
+                    ]
+                }
+            ]
+        }
+    });
+</script>
+</body>
+</html>

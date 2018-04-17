@@ -1,0 +1,28 @@
+
+<%-include("include/header.html")%>
+
+
+<div id="app">
+    <div style="height:200px;border:1px solid red;">
+            <h1>我是Content2.html</h1>
+        
+    </div>
+    
+</div>
+
+<%-include("include/footer-js.html")%>
+
+<script>
+   
+    var app = new Vue({
+        el: '#app',
+        data : {
+            value:''
+        },
+        mounted:function() {
+        }
+    });
+
+</script>
+</body>
+</html>

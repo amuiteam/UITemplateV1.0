@@ -1,0 +1,108 @@
+
+<%-include("include/header.html")%>
+<style>
+    .container{
+        margin:20px 0;
+    }
+    .top{
+        padding: 10px;
+        background: rgba(0, 153, 229, .7);
+        color: #fff;
+        text-align: center;
+        border-radius: 2px;
+    }
+</style>
+<div id="app">
+    <h1>我是Content页面</h1>
+    <div class="container">
+        <Row>
+            <i-col span="12">col-12</i-col>
+            <i-col span="12">col-12</i-col>
+        </Row>
+        <br>
+        <Row>
+            <i-col span="8">col-8</i-col>
+            <i-col span="8">col-8</i-col>
+            <i-col span="8">col-8</i-col>
+        </Row>
+        <br>
+        <Row>
+            <i-col span="6">col-6</i-col>
+            <i-col span="6">col-6</i-col>
+            <i-col span="6">col-6</i-col>
+            <i-col span="6">col-6</i-col>
+        </Row>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <Alert>An info prompt</Alert>
+            </div>
+            <div class="col-sm-3">
+                <Alert type="success">A success prompt</Alert>
+            </div>
+            <div class="col-sm-3">
+                <Alert type="success">A success prompt</Alert>
+            </div>
+            <div class="col-sm-3">
+                <Alert type="success">A success prompt</Alert>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="container">
+        <i-button>Default</i-button>
+        <i-button type="primary">Primary</i-button>
+        <i-button type="ghost">Ghost</i-button>
+        <i-button type="dashed">Dashed</i-button>
+        <i-button type="text">Text</i-button>
+        <br><br>
+        <i-button type="info">Info</i-button>
+        <i-button type="success">Success</i-button>
+        <i-button type="warning">Warning</i-button>
+        <i-button type="error">Error</i-button>
+    </div>
+    
+    <div class="container" style="height:800px;">
+        <!--<i class="ivu-icon ivu-icon-alert"></i>-->
+    </div>
+    
+    <div class="container">
+        <i-input v-model="value" placeholder="Enter something..." style="width: 300px"></i-input>
+        <i-input v-model="value" size="large" placeholder="large size"></i-input>
+        <br>
+        <i-input v-model="value" placeholder="default size"></i-input>
+        <br>
+        <i-input v-model="value" size="small" placeholder="small size"></i-input>
+
+    </div>
+    
+    <div class="container">
+        <i-circle :percent="80">
+            <span class="demo-Circle-inner" style="font-size:24px">80%</span>
+        </i-circle>
+    </div>
+    
+    <i-backTop :height="100" :bottom="200">
+        <div class="top">返回顶端</div>
+    </i-backTop>
+</div>
+
+
+
+<%-include("include/footer-js.html")%>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data : {
+            value:''
+        },
+        mounted:function() {
+        }
+    });
+
+</script>
+</body>
+</html>
